@@ -1,7 +1,7 @@
-import showBlog from './components/showBlog.vue'
+import frontpage from './components/frontpage.vue'
 import addBlog from './components/addBlog.vue'
 
 export default [
-    {path:'/', component:showBlog},
+    {path:'/', component:frontpage},
     {path:'/add',component:addBlog},
 ]
