@@ -1,18 +1,36 @@
 <template>
   <div>
     <app-header></app-header>
-    <router-view></router-view>
+    <router-view :posts="posts"></router-view>
   </div>
 </template>
 
 <script>
-import addBlog from './components/addBlog'
+import feed from './components/feed'
 import Header from './components/Header'
 
 export default {
   components:{
-    'add-blog':addBlog,
+    'add-feed':feed,
     'appHeader':Header
+  },
+  data: function(){
+    return {
+      posts:[
+        {
+          title:"Today Was Good", 
+          content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo quidem cupiditate ipsam! Magni quas atque temporibus sapiente consequatur dolor, eveniet quidem impedit in velit ad est, quam nam odit tempore." 
+        },
+        {
+          title:"Today Was Good", 
+          content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo quidem cupiditate ipsam! Magni quas atque temporibus sapiente consequatur dolor, eveniet quidem impedit in velit ad est, quam nam odit tempore." 
+        },
+        {
+          title:"Today Was Good", 
+          content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo quidem cupiditate ipsam! Magni quas atque temporibus sapiente consequatur dolor, eveniet quidem impedit in velit ad est, quam nam odit tempore." 
+        }
+      ]
+    }
   }
 
 }
