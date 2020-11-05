@@ -1,7 +1,7 @@
 <template>
   <div class="p-5"> <!-- CONTROLING THE PADDING OF THE PAGE BELOW THE HEADER-->
       <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand bg-danger p-2" href="">VLOGGER</a>
+        <a class="navbar-brand bg-danger p-2" href="/">VLOGGER</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
