@@ -20,7 +20,7 @@
         </div>
 
         <showBlog v-else :posts = "posts"></showBlog>
-
+        
     </div>
 </template>
 
@@ -44,7 +44,8 @@
                 advancedTextArea:false,
                 data:{
                     title:"Blog",
-                    content:''
+                    content:'',
+                    postedTime:''
                 }
             }
         },
@@ -53,11 +54,13 @@
 
                 this.data.title = this.title
                 this.data.content = this.content
+                this.data.postedTime = Date().toString().slice(16,18)  +  Date().toString().slice(19,21) // 1405   1520  115/60
 
                 this.posts.push(
                     {
                         title:this.title,
-                        content:this.content
+                        content:this.content,
+                        postedTime:  Date().toString().slice(16,18)  +  Date().toString().slice(19,21)
                     }
                 );
 

@@ -10,7 +10,7 @@
                         <!-- <strong class="d-inline-block mb-2 text-white bg-primary">World</strong> -->
 
                         <h3 class="mb-0">{{ post.title }} </h3>
-                        <span class="mb-1 mL-auto text-transparent">Nov 12</span>
+                        <span class="mb-1 ml-auto text-transparent">{{ Math.abs(now - Number(post.postedTime)) }} min ago</span>
                         <div class="card-text mb-auto" :style="{'max-height':'80px'}" :inner-html.prop="post.content"></div>
                     </div>
                     <div class="shad">
@@ -32,7 +32,8 @@ export default {
     data(){
         return {
             seeMorePost:false,
-            postContentHeight:"20px"
+            postContentHeight:"20px",
+            now : Date().toString().slice(16,18)  +  Date().toString().slice(19,21)
         }
     },
     created(){
@@ -54,8 +55,7 @@ export default {
         bottom: -45px;
         width: 100%;
         height: 80px;
-        background:  linear-gradient(to bottom, transparent, rgba(117, 19, 93, 0.73));
- 
+        background:  linear-gradient(to bottom, transparent, rgba(225, 238, 47, 0.73)); 
     }
     .post{
         /*  */
