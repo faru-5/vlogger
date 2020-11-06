@@ -6,15 +6,19 @@
             <textarea v-if="!advancedTextArea" class="form-control" v-model="content" rows="5" id="my_editor" placeholder="what is on your mind?"></textarea>
             <!-- <p class="lead">{{content}}</p> -->
             <div v-else id="app">
-                <ckeditor v-model="content" :config="editorConfig"></ckeditor>
+                <ckeditor v-model="content" ></ckeditor>
             </div>
             <button class="btn btn-outline-primary" @click.prevent="advancedTextArea = !advancedTextArea">Change Typing Mode</button>
             <button @click.prevent = "post" class="btn btn-info m-2">POST</button>
         </form>
 
-        <div v-if="!dataLoaded" class="container">
-            Not Loaded
+        
+        <div v-if="!dataLoaded" class="text-center">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
         </div>
+        
         <showBlog v-else :posts = "posts"></showBlog>
 
     </div>
