@@ -19,20 +19,7 @@ export default {
   },
   data: function(){
     return {
-      posts:[
-        {
-          title:"Today Was Good", 
-          content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo quidem cupiditate ipsam! Magni quas atque temporibus sapiente consequatur dolor, eveniet quidem impedit in velit ad est, quam nam odit tempore." 
-        },
-        {
-          title:"Today Was Good", 
-          content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo quidem cupiditate ipsam! Magni quas atque temporibus sapiente consequatur dolor, eveniet quidem impedit in velit ad est, quam nam odit tempore." 
-        },
-        {
-          title:"Today Was Good", 
-          content:"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo quidem cupiditate ipsam! Magni quas atque temporibus sapiente consequatur dolor, eveniet quidem impedit in velit ad est, quam nam odit tempore." 
-        }
-      ]
+      posts:[]
     }
   }
 

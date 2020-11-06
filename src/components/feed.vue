@@ -11,7 +11,10 @@
             <button @click.prevent = "post" class="btn btn-info m-2">POST</button>
         </form>
 
-        <showBlog :posts = "posts"></showBlog>
+        <div v-if="!dataLoaded" class="container">
+            Not Loaded
+        </div>
+        <showBlog v-else :posts = "posts"></showBlog>
 
     </div>
 </template>
@@ -31,7 +34,8 @@
             return {
                 title:'',
                 content:'',
-                postArea:false
+                postArea:false,
+                dataLoaded:false
             }
         },
         methods:{
@@ -41,11 +45,31 @@
                         title:this.title,
                         content:this.content
                     }
-                )
+                );
+
+                this.$http.post('https://vlogger-e691b.firebaseio.com/data.json', this.posts)
+                .then(response => {
+                    console.log(response)
+                }, error =>{
+                    console.log(error)
+                })
                 this.title = '',
                 this.content = '',
                 this.postArea = false
             }
+        },
+        created(){
+            this.$http.get('https://vlogger-e691b.firebaseio.com/data.json')
+                .then(response => {
+                    return response.json()
+                }) .then(data => {
+                    const fetchedData = [];
+                    for(let key in data){
+                        fetchedData.push(data[key])
+                    }
+                    this.posts = fetchedData;
+                    this.dataLoaded = true;
+                })
         }
     }
     
