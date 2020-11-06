@@ -2,7 +2,7 @@
     <div class="container">
         <button v-if="!postArea" @click="postArea = true" class="w-100 p-2 mb-2 btn btn-warning">Post What's Happening Now </button>
         <form v-else class="form-group">
-            <textarea class="form-control mb-3" v-model="title" rows="1" id="my_editor" placeholder="title"></textarea>
+            <textarea class="form-control mb-3"  v-model="title" rows="1" id="my_editor" placeholder="title"></textarea>
             <textarea v-if="!advancedTextArea" class="form-control" v-model="content" rows="5" id="my_editor" placeholder="what is on your mind?"></textarea>
             <!-- <p class="lead">{{content}}</p> -->
             <div v-else id="app">
@@ -50,6 +50,10 @@
         },
         methods:{
             post(){
+
+                this.data.title = this.title
+                this.data.content = this.content
+
                 this.posts.push(
                     {
                         title:this.title,
@@ -57,8 +61,6 @@
                     }
                 );
 
-                this.data.title = this.title
-                this.data.content = this.content
 
                 this.$http.post('https://vlogger-e691b.firebaseio.com/data.json', this.data)
                 .then(response => {
