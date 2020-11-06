@@ -18,7 +18,7 @@
                 <span class="sr-only">Loading...</span>
             </div>
         </div>
-        
+
         <showBlog v-else :posts = "posts"></showBlog>
 
     </div>
@@ -41,7 +41,11 @@
                 content:'',
                 postArea:false,
                 dataLoaded:false,
-                advancedTextArea:false
+                advancedTextArea:false,
+                data:{
+                    title:"",
+                    content:''
+                }
             }
         },
         methods:{
@@ -53,7 +57,10 @@
                     }
                 );
 
-                this.$http.post('https://vlogger-e691b.firebaseio.com/data.json', this.posts)
+                this.data.title = this.title
+                this.data.content = this.content
+
+                this.$http.post('https://vlogger-e691b.firebaseio.com/data.json', this.data)
                 .then(response => {
                     console.log(response)
                 }, error =>{

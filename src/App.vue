@@ -19,7 +19,10 @@ export default {
   },
   data: function(){
     return {
-      posts:[]
+      posts:[{
+        tile:'',
+        content:''
+      }]
     }
   }
 

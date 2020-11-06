@@ -7,11 +7,8 @@
                         <strong class="d-inline-block mb-2 text-white bg-primary">World</strong>
                         <h3 class="mb-0">{{ post.title }} </h3>
                         <div class="mb-1 mr-auto w-25 bg-warning text-transparent">Nov 12</div>
-                        <p class="card-text mb-auto"  v-html="post.content"></p>
-                        <a href="#" class="stretched-link">Continue reading</a>
-                    </div>
-                    <div class="col-auto d-lg-block">
-                        <img src="./25567.jpg" class="w-100" alt="">
+                        <div class="card-text mb-auto"  v-html="post.content"></div>
+                        <a href="#" class="">Continue reading</a>
                     </div>
                 </div>
             </div>
