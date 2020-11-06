@@ -43,7 +43,7 @@
                 dataLoaded:false,
                 advancedTextArea:false,
                 data:{
-                    title:"",
+                    title:"Blog",
                     content:''
                 }
             }
